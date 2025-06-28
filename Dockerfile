@@ -1,5 +1,5 @@
 FROM traefik/whoami:latest
 
-EXPOSE 4000
+EXPOSE 80
 
 CMD ["./whoami"]
