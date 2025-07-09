@@ -4,7 +4,7 @@ services:
     ports:
       - 80
     deploy:
-      replicas: 3
+      replicas: 6
       restart_policy:
         condition: on-failure
         delay: 5s
