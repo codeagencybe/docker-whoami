@@ -1,27 +1,6 @@
-#services:
-#  whoami:
-#    image: traefik/whoami:latest
-#    ports:
-#      - 80
-#    deploy:
-#      replicas: 6
-#      placement:
-#        constraints:
-#          - node.role == manager
-#        max_replicas_per_node: 2
-#      restart_policy:
-#        condition: on-failure
-#        delay: 5s
-#        max_attempts: 3
-#      update_config:
-#        parallelism: 1
-#        delay: 10s
-
 services:
   whoami:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: traefik/whoami:latest
     ports:
       - 80
     deploy:
@@ -37,3 +16,24 @@ services:
       update_config:
         parallelism: 1
         delay: 10s
+
+#services:
+#  whoami:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    ports:
+#      - 80
+#    deploy:
+#      replicas: 6
+#      placement:
+#        constraints:
+#          - node.role == manager
+#        max_replicas_per_node: 2
+#      restart_policy:
+#        condition: on-failure
+#        delay: 5s
+#        max_attempts: 3
+#      update_config:
+#        parallelism: 1
+#        delay: 10s
