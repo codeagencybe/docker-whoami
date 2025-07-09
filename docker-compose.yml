@@ -2,7 +2,7 @@ services:
   whoami:
     image: traefik/whoami:latest
     ports:
-      - 8080
+      - 80
     deploy:
       replicas: 3
       restart_policy:
